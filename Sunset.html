@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fontawesome-free-5.15.3-web/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.esm.bundle.js"></script>
+    
+    <style>
+        body{
+            font-family: 'Permanent Marker', cursive,'Noto Sans TC', sans-serif;
+            background-color: #fbdd9b;
+        }
+        .navb {
+            height: 104px;
+            background-color: rgb(70, 116, 233);
+            transition: .5s;
+        }
+        .navb.hide{
+            transform: translateY(-104px);
+        }
+        .logo img{
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        .nav a{
+            font-size: 20px;
+        }
+        .social a{
+            font-size: 20px;
+        }
+        /* ------------------------herosection---------------------------------------- */
+        .img-wrap{
+            margin-top: 200px;
+            color:#fff
+        }
+        .banner {
+            width: 684px;
+            height: 513px;
+            overflow: hidden;
+            position: relative;
+        }
+        .banner ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            transition: 1s;
+            display: flex;
+            width: 600%;
+        }
+        .banner ul li {
+            height: 100%;
+        }
+        .banner ul li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .left-arrow-area,
+        .right-arrow-area {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left-arrow-area {
+            left: 0;
+        }
+        .right-arrow-area {
+            right: 0;
+        }
+        .arrow {
+            color: #fff;
+            font-size: 2rem;
+        }
+        .text{
+            margin: 150px 0 0 50px;
+            letter-spacing: 1.5px;
+        }
+        .text h2{
+            line-height: 3rem;
+        }
+        .text p {
+            font-size: 20px;
+            line-height: 1.8rem;
+            margin-top: 20px;
+            margin-left: 80px;
+        }
+        /* -------------------------------member--------------------------------- */
+        .sun{
+            margin: 50px auto;
+        }
+        .info-wrap{
+            transform: translateY(200px);
+            opacity: 0;
+            transition:1s;
+        }
+        .info-wrap.show{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        .info-row{
+            margin: 0 5px;
+            width: 100%;
+        }
+        .info-row img{
+            width: 100%;
+            height: 257px;
+            object-fit: cover;
+        }
+        .card-body{
+            text-align: center;
+            border: 1px solid transparent;
+            background-color: #ffa74a96;
+            color:#750D0E;
+        }
+        /* -------------------------------albums--------------------------------- */
+        .swiper-container {
+            width: 772px;
+            height: 550px;
+            position: relative;
+            transform: translateY(200px);
+            opacity: 0;
+            transition: 1s;
+  	    }
+        .swiper-container.show{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        .album-row{
+            /* margin: 0 5px; */
+            width: 100%;
+        }
+        .album-row img{
+            width: 100%;
+        }
+        .album-body{
+            width: 312px;
+            height: 550px;
+            overflow: hidden;
+        }
+        .album-body h4{
+            margin-top: 70px;
+        }
+        .album-body h6{
+            margin-top: 20px;
+            line-height: 20px;
+        }
+        .prev{
+            position: absolute;
+            left: -100px;
+        }
+        .next{
+            position: absolute;
+            right: -100px;
+        }
+        /* ---------------------video--------------------------- */
+        .video{
+            position: relative;
+        }
+        .video a{
+            position: absolute;
+            top:500px;
+            left:1200px;
+            margin-right: 48px;
+            padding:0;
+        }
+        /* --------------------footer---------------------------- */
+        .tour a{
+            font-size: 20px;
+            color: #fff;
+        }
+        footer .btn{
+            background-color: #ffa74a96;
+            color: #750D0E;
+        }
+        footer .btnToTop{
+            position: fixed;
+            bottom: 75px;
+            right:0;
+        }
+        footer .btnToTop:hover i{
+            transition:.5s;
+            transform: translateY(-10px);
+        }
+        footer .btnToDown{
+            position: fixed;
+            bottom: 20px;
+            right:0;
+        }
+        footer .btnToDown:hover i{
+            transition:.5s;
+            transform: translateY(10px);
+        }
+    </style>
+</head>
+<body>
+    <header class="navb fixed-top">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="logo d-flex">
+                    <img src="./img/logo.jpg" alt="" style="width: 63px; height: 63px;">
+                    <h1 style="color: rgb(246, 205, 67);">SUNSET <br>ROLLERCOASTER</h1>
+                </div>
+                <div class="nav">
+                    <a class="text-dark mr-4 animate__animated" href="#">About us&nbsp;</a>
+                    <a class="text-dark mr-4 animate__animated" href="#">News&nbsp;</a>
+                    <a class="text-dark mr-4 animate__animated" href="#">Albums&nbsp;</a>
+                    <a class="text-dark mr-4 animate__animated" href="#">Video&nbsp;</a>
+                </div>
+                <div class="social">
+                    <a class="text-dark mr-2 animate__animated" href="#">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-dark mr-2 animate__animated" href="#">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-dark mr-2 animate__animated"href="#">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="herosection" style="background:url(./img/website-01.jpg); width: 100%; height: 800px; background-size: cover;">
+        <div class="container">
+            <div class="row">
+                <div class="img-wrap d-flex">
+                    <div class="banner">
+                        <ul>
+                            <li><img src="./img/slide04.jpg" alt=""></li>
+                            <li><img src="./img/slide01.jpg" alt=""></li>
+                            <li><img src="./img/slide02.jpg" alt=""></li>
+                            <li><img src="./img/slide03.jpg" alt=""></li>
+                            <li><img src="./img/slide04.jpg" alt=""></li>
+                            <li><img src="./img/slide01.jpg" alt=""></li>
+                        </ul>
+                        
+                        <div class="left-arrow-area">
+                            <i class="arrow fas fa-chevron-left"></i>
+                        </div>
+                        <div class="right-arrow-area">
+                            <i class="arrow fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h2>來自台灣的樂團-落日飛車<br>帶給你亂世裡的溫柔</h2>
+                        <p>--是避世的綠洲 是浪漫的想像<br>落日飛車在這混亂的世代裡<br>讓你感受到音樂的溫柔</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="member" style="height:700px; margin-top: 100px;">
+        <div class="container">
+            <div class="row">
+                <img class="sun" src="./img/SR-logo-2019-small.png" alt="">
+                <div class="col-12">
+                    <div class="info-wrap d-flex">
+                        <div class="info-row animate__animated">
+                            <img src="./img/弘禮.png" alt="">
+                            <div class="card-body">
+                                <h5>陳弘禮（弘禮）</h5>
+                                <h6>貝斯、合成器</h6>
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="info-row animate__animated">
+                            <img src="./img/少軒.png" alt="">
+                            <div class="card-body">
+                                <h5>王少軒（小甘）</h5>
+                                <h6>鍵盤</h6>
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="info-row animate__animated">
+                            <img src="./img/國國.png" alt="">
+                            <div class="card-body">
+                                <h5>曾國宏（國國）</h5>
+                                <h6>主唱、吉他</h6>
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="info-row animate__animated">
+                            <img src="./img/尊龍.png" alt="">
+                            <div class="card-body">
+                                <h5>羅尊龍（尊龍）</h5>
+                                <h6>鼓手</h6>
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                        <div class="info-row animate__animated">
+                            <img src="./img/浩庭.png" alt="">
+                            <div class="card-body">
+                                <h5>黃浩庭（浩庭）</h5>
+                                <h6>薩克斯風</h6>
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="albums" style="height:800px;">
+        <h1 class="my-5" style="color:#E58620; text-align: center; font-size: 60px;">DISCOGRAPHY</h1>
+            <div class="swiper-container">
+                <div class="album-wrap swiper-wrapper">
+                    <div class="album-row swiper-slide d-flex">
+                        <img src="./img/JK.jpg" alt="">
+                        <div class="card-body album-body">
+                            <h4>《Jinji Kikko 金桔希子》</h4>
+                            <h6>1. Burgundy Red <br>
+
+                                2. My Jinji<br>
+                                    
+                                3. New Drug 
+                        </h6>
+                        </div>
+                    </div>
+                    <div class="album-row swiper-slide d-flex">
+                        <img src="./img/SS.jpg" alt="">
+                        <div class="card-body album-body">
+                            <h4>《SOFT STORM 柔性風暴》</h4>
+                            <h6>1. Soft Storm 
+
+                                2.Candlelight (feat. OHHYUK) <br>
+                                    
+                                3.Under the Skin <br>
+                                    
+                                4.Passerby (feat. Michael Seyer)<br> 
+                                    
+                                5.Teahouse<br>
+                                    
+                                6.Overlove (Rehab)<br> 
+                                    
+                                7.Hyperfocus<br>
+                                    
+                                8.Midnight with Paul<br> 
+                                    
+                                9.Overlove
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="album-row swiper-slide d-flex">
+                        <img src="./img/CN.jpg" alt="">
+                        <div class="card-body album-body">
+                            <h4>《Cassa Nova  &nbsp;半熟王子》</h4>
+                            <h6>1. Almost Mature ’87<br>
+
+                                2. Greedy<br>
+                                    
+                                3. Cool of Lullaby<br>
+                                    
+                                4. Angel Disco Love<br>
+                                    
+                                5. Slow<br>
+                                    
+                                6. Oriental<br>
+                                    
+                                7. Summum Bonum<br>
+                                    
+                                8. Libidream<br>
+                                    
+                                9. 10-Year-Taipei (Matured ’17)
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="album-row swiper-slide d-flex">
+                        <img src="./img/vv.jpg" alt="">
+                        <div class="card-body album-body">
+                            <h4>《Vanilla Villa 香草度假村》</h4>
+                            <h6>1.  Welcome to<br>
+
+                                2. Vanilla<br>
+                                    
+                                3. Villa
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="album-row swiper-slide d-flex">
+                        <img src="./img/BN.jpg" alt="">
+                        <div class="card-body album-body">
+                            <h4>《Bossa Nova  &nbsp;芭莎諾娃》</h4>
+                            <h6>1. Bomb of Love<br>
+
+                                2. No Man’s Land<br>
+                                    
+                                3. Hogi Hogi La La Jo<br>
+                                    
+                                4. Punk<br>
+                                    
+                                5. A Little Piece of Sadness<br>
+                                    
+                                6. Pinky Pinky<br>
+                                    
+                                7. Little Monkey Rides on the Little Donkey<br>
+                                    
+                                8. I Know You Know I Love You<br>
+                                    
+                                9. Blues<br>
+                                    
+                                10. No Man’s Land (Reprise)<br>
+                                    
+                                11. Queen<br>
+                                    
+                                12. My Monday Throne
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev prev"></div>
+                <div class="swiper-button-next next"></div>
+            </div>
+    </div>
+
+    <div class="video" style="height:800px; background:#fbdd9b;">
+            <!-- <video src="https://youtu.be/Dxq0IqhT3XI" width="100%" height="800" controls autoplay>
+                <source src="https://youtu.be/Dxq0IqhT3XI" type="video/mp4; codecs='avc1, mp4a'">
+                <source src="https://youtu.be/Dxq0IqhT3XI" type="video/webm; codecs='vp8.0, vorbis'">
+            </video> -->
+            <iframe width="100%" height="800px" src="https://www.youtube.com/embed/3BK2uqgzza0?&amp;start=1030&end=1153&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <a class="btn btn-light btn-lg" style="font-size:15px;" href="https://youtu.be/Dxq0IqhT3XI" role="button">“Sunset Rollercoaster - Slow” →</a>
+    </div>
+
+    <footer class="d-flex align-items-center justify-content-between" style="height:75px; background:#000;">
+        <div class="copy-right ml-5" style="color:#fff">
+            <p style="margin-bottom:0">© Copyright 2021 Dean.<br>
+                All Rights Reserved.
+            </p>
+        </div>
+        <div class="tour" style="margin-right: 140px;">
+            <a class="mr-4 animate__animated" href="#">News</a>
+            <a class="mr-4 animate__animated" href="#">Tour</a>
+            <a class="mr-4 animate__animated" href="#">Shop</a>
+            <a class="mr-4 animate__animated" href="#">Contact</a>
+        </div>
+        <button class="btn btn-lg btnToTop mr-5"><i class="fas fa-caret-up"></i></button>
+        <button class="btn btn-lg btnToDown mr-5"><i class="fas fa-caret-down"></i></button>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        // header jq 
+        let lastScroll = 0;
+
+        $(window).scroll(function(){
+            const nowScroll = $(window).scrollTop();
+            console.log('lastScroll:', lastScroll);
+            console.log('nowScroll:', nowScroll);
+
+            if(lastScroll < nowScroll){
+                $('.navb').addClass('hide');
+            }
+            else {
+                $('.navb').removeClass('hide');
+            }
+
+            lastScroll = nowScroll;
+        });
+
+        $('.nav a').mouseenter(function(){
+            $(this).addClass('animate__fadeIn')
+        });
+
+        $('.nav a').mouseleave(function(){
+            $(this).removeClass('animate__fadeIn')
+        });
+
+        $('.social a').mouseenter(function(){
+            $(this).addClass('animate__fadeIn')
+        });
+
+        $('.social a').mouseleave(function(){
+            $(this).removeClass('animate__fadeIn')
+        });
+
+        // herosection jq
+        let nowPage = 1;
+        changePage();
+        $('.left-arrow-area').click(function () {
+            console.log('left-arrow-area clicked');
+            nowPage = nowPage - 1;
+            console.log('nowPage', nowPage);
+
+            changePage();
+        });
+
+        $('.right-arrow-area').click(function () {
+            console.log('right-arrow-area clicked');
+            nowPage = nowPage + 1;
+            console.log('nowPage', nowPage);
+
+            changePage();
+        });
+
+        function changePage() {
+            const bannerWidth = $('.banner').width();
+            const positionX = nowPage * -1 * bannerWidth;
+            $('.banner ul').css('transition', '1s').css('transform', `translateX(${positionX}px)`);
+        }
+
+        function changePageQuietly() {
+            const bannerWidth = $('.banner').width();
+            const positionX = nowPage * -1 * bannerWidth;
+            $('.banner ul').css('transition', 'none').css('transform', `translateX(${positionX}px)`);
+        }
+
+        let myInterval;
+        startMyInterval();
+
+        function startMyInterval() {
+            myInterval = setInterval(function () {
+                nowPage++;
+                changePage();
+            }, 3000);
+        }
+
+        $('.banner').mouseenter(function () {
+            clearInterval(myInterval);
+        });
+        $('.banner').mouseleave(function () {
+            startMyInterval();
+        });
+
+        $('.banner ul').on('transitionend', function () {
+            if (nowPage >= 5) {
+                nowPage = 1;
+                changePageQuietly();
+            }
+            if (nowPage <= 0) {
+                nowPage = 4;
+                changePageQuietly();
+            }
+        });
+
+        $(window).resize(function () {
+            changePageQuietly();
+        });
+
+        // member jq
+        $(window).scroll(function(){
+            $('.info-wrap').each(function (index, item){
+                console.log('item:',$(item).offset().top);
+
+                if($(window).scrollTop() + $(window).height() >= $(item).offset().top){
+                    $(item).addClass('show');
+                }
+                else{
+                    $(item).removeClass('show');
+                }
+            });
+        });
+
+        $('.info-row').mouseenter(function(){
+            console.log('hi');
+            $(this).addClass('animate__pulse');
+            // $('.info-row').addClass('animate__pulse').one('animationend', function(){
+            //     $('.info-row').removeClass('animate__pulse');
+            // });
+        });
+
+        $('.info-row').mouseleave(function(){
+            console.log('hi');
+            $(this).removeClass('animate__pulse');
+        });
+
+        // album jq
+        $(window).scroll(function(){
+            $('.swiper-container').each(function (index, item){
+                console.log('item:',$(item).offset().top);
+
+                if($(window).scrollTop() + $(window).height() >= $(item).offset().top){
+                    $(item).addClass('show');
+                }
+                else{
+                    $(item).removeClass('show');
+                }
+            });
+        });
+
+        var mySwiper = new Swiper ( ".swiper-container", {
+            // 參數設定[註1]
+            effect: "cube", // 效果
+            grabCursor: true, // 游標為手掌
+            cubeEffect: {
+                shadow: true, // 顯示陰影
+                slideShadows: true, // 當滑動時，則顯示動陰影
+                shadowOffset: 50, // 陰影偏移
+                shadowScale: 0.94, // 陰影比例
+            },
+            navigation: {
+                nextEl: ".swiper-button-next", // 上一頁按鈕物件
+                prevEl: ".swiper-button-prev", // 下一頁按鈕物件
+            }
+  	    });
+        
+        // footer jq
+        $('.tour a').mouseenter(function(){
+            $(this).addClass('animate__fadeInDown');
+        });
+
+        $('.tour a').mouseleave(function(){
+            $(this).removeClass('animate__fadeInDown');
+        });
+
+        // btnToTop jq
+        $(window).scroll(function(){
+            console.log($('footer .btnToDown').offset().top);
+            if($('footer .btnToDown').offset().top >= $(window).scrollTop() + $(window).height()){
+                $('footer .btnToDown').css('background','black')
+            }
+        });
+
+        $('footer .btnToTop').click(function () {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+        $('footer .btnToDown').click(function () {
+            $("html, body").animate({ scrollTop: 2976 }, "slow");
+            return false;
+        });
+    </script>
+</body>
+</html>
