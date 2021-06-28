@@ -770,6 +770,25 @@
         });
 
         // btnToTop jq
+        // 手機按鈕
+        $(window).scroll(function(){
+            if ($('footer .smBtnToDown').offset().top >= $('.video').offset().top) {
+                $('footer .smBtnToDown').css('background', 'white').css('color','black');
+            }
+            else {
+                $('footer .smBtnToDown').css('background', '#ffa74a96').css('color','#750D0E');
+            }
+        });
+
+        $(window).scroll(function(){
+            if ($('footer .smBtnToTop').offset().top >= $('.video').offset().top) {
+                $('footer .smBtnToTop').css('background', 'white').css('color','black');
+            }
+            else {
+                $('footer .smBtnToTop').css('background', '#ffa74a96').css('color','#750D0E');
+            }
+        });
+        // 桌機按鈕
         $(window).scroll(function(){
             if ($('footer .btnToDown').offset().top >= $('.video').offset().top) {
                 $('footer .btnToDown').css('background', 'white').css('color','black');
@@ -796,14 +815,6 @@
             $("html, body").animate({ scrollTop: 2976 }, "slow");
             return false;
         });
-        // $('footer .smBtnToTop').click(function () {
-        //     $("html, body").animate({ scrollTop: 0 }, "slow");
-        //     return false;
-        // });
-        // $('footer .smBtnToDown').click(function () {
-        //     $("html, body").animate({ scrollTop: 2976 }, "slow");
-        //     return false;
-        // });
     </script>
 </body>
 </html>
