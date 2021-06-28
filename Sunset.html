@@ -317,6 +317,7 @@
                 <img class="sun" src="./img/SR-logo-2019-small.png" alt="">
             </div>
             <div class="row">
+                <!-- 手機版輪播牆 -->
                 <div class="col-12 d-lg-none">
                     <div class="info-wrap d-flex">
                         <div class="info-row animate__animated col-6">
@@ -366,6 +367,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- 桌機版輪播牆 -->
                 <div class="col-12 d-none d-lg-block">
                     <div class="info-wrap d-flex">
                         <div class="info-row animate__animated">
@@ -600,8 +602,8 @@
             <button class="btn btn-lg btnToDown mr-3 smBtnToDown"><i class="fas fa-caret-down"></i></button>
         </div>
         <div class="d-none d-lg-block">
-            <button class="btn btn-lg btnToTop mr-lg-5"><i class="fas fa-caret-up"></i></button>
-            <button class="btn btn-lg btnToDown mr-lg-5"><i class="fas fa-caret-down"></i></button>
+            <button class="btn btn-lg btnToTop mr-lg-5 lgBtnToTop"><i class="fas fa-caret-up"></i></button>
+            <button class="btn btn-lg btnToDown mr-lg-5 lgBtnToDown"><i class="fas fa-caret-down"></i></button>
         </div>
     </footer>
 
@@ -790,20 +792,20 @@
         });
         // 桌機按鈕
         $(window).scroll(function(){
-            if ($('footer .btnToDown').offset().top >= $('.video').offset().top) {
-                $('footer .btnToDown').css('background', 'white').css('color','black');
+            if ($('footer .lgBtnToDown').offset().top >= $('.video').offset().top) {
+                $('footer .lgBtnToDown').css('background', 'white').css('color','black');
             }
             else {
-                $('footer .btnToDown').css('background', '#ffa74a96').css('color','#750D0E');
+                $('footer .lgBtnToDown').css('background', '#ffa74a96').css('color','#750D0E');
             }
         });
 
         $(window).scroll(function(){
-            if ($('footer .btnToTop').offset().top >= $('.video').offset().top) {
-                $('footer .btnToTop').css('background', 'white').css('color','black');
+            if ($('footer .lgBtnToTop').offset().top >= $('.video').offset().top) {
+                $('footer .lgBtnToTop').css('background', 'white').css('color','black');
             }
             else {
-                $('footer .btnToTop').css('background', '#ffa74a96').css('color','#750D0E');
+                $('footer .lgBtnToTop').css('background', '#ffa74a96').css('color','#750D0E');
             }
         });
         
