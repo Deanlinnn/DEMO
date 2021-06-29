@@ -54,6 +54,16 @@
             margin-top: 200px;
             color:#fff
         }
+        .vog ul{
+            width: 100%;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .vog ul img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
         .banner {
             width: 684px;
             height: 513px;
@@ -261,28 +271,16 @@
     <div class="herosection" style="background:url(./img/website-01.jpg); width: 100%; background-size: cover;">
         <div class="container">
             <div class="row">
-                <!-- 手機版輪播牆 -->
-                <div class="img-wrap d-lg-none">
-                    <div class="banner" style="position: relative; width:100%">
+                <!-- 手機版-->
+                <div class="img-wrap d-lg-none" style="margin-top:100px">
+                    <div class="vog" style="position: relative; width:100%">
                         <ul>
-                            <li><img src="./img/slide04.jpg" alt=""></li>
-                            <li><img src="./img/slide01.jpg" alt=""></li>
-                            <li><img src="./img/slide02.jpg" alt=""></li>
-                            <li><img src="./img/slide03.jpg" alt=""></li>
-                            <li><img src="./img/slide04.jpg" alt=""></li>
-                            <li><img src="./img/slide01.jpg" alt=""></li>
+                            <li><img src="./img/vogue.jpg" alt=""></li>
                         </ul>
-                        
-                        <div class="left-arrow-area">
-                            <i class="arrow fas fa-chevron-left"></i>
-                        </div>
-                        <div class="right-arrow-area">
-                            <i class="arrow fas fa-chevron-right"></i>
-                        </div>
                     </div>
-                    <div class="text" style="position: absolute; top: 350px; left: 0;">
-                        <h2 class="ml-5" style="text-align: center; font-size: 30px;">來自台灣的樂團-落日飛車<br>帶給你亂世裡的溫柔</h2>
-                        <p style="text-align: center">--是避世的綠洲 是浪漫的想像<br>落日飛車在這混亂的世代裡<br>讓你感受到音樂的溫柔</p>
+                    <div class="text" style="position: absolute; top: 595px; left: 0; background-color: rgba(204, 204, 204, 0.322);">
+                        <h2 class="mx-4" style="text-align: center; font-size: 30px;">來自台灣的樂團-落日飛車<br>帶給你亂世裡的溫柔</h2>
+                        <p style="text-align: center; margin-left: 0px;">是避世的綠洲 是浪漫的想像<br>落日飛車在這混亂的世代裡<br>讓你感受到音樂的溫柔</p>
                     </div>
                 </div>
                 <!-- 桌機版輪播牆 -->
@@ -427,32 +425,32 @@
                 <div class="album-wrap swiper-wrapper">
                     <div class="album-row swiper-slide d-flex">
                         <img src="./img/JK.jpg" alt="">
-                        <div class="card-body album-body" style="width: 350px; height:200px">
+                        <div class="card-body album-body" style="width: 250px; height:200px;">
                             <h4 class="mt-4">《Jinji Kikko 金桔希子》</h4>
                         </div>
                     </div>
                     <div class="album-row swiper-slide d-flex">
                         <img src="./img/SS.jpg" alt="">
-                        <div class="card-body album-body" style="width: 350px; height:200px">
+                        <div class="card-body album-body" style="width: 250px; height:200px">
                             <h4 class="mt-4">《SOFT STORM 柔性風暴》</h4>
                         </div>
                     </div>
                     <div class="album-row swiper-slide d-flex">
                         <img src="./img/CN.jpg" alt="">
-                        <div class="card-body album-body" style="width: 350px; height:200px">
-                            <h4 class="mt-4">《Cassa Nova  &nbsp;半熟王子》</h4>
+                        <div class="card-body album-body" style="width: 250px; height:200px">
+                            <h4 class="mt-4">《Cassa Nova 半熟王子》</h4>
                         </div>
                     </div>
                     <div class="album-row swiper-slide d-flex">
                         <img src="./img/vv.jpg" alt="">
-                        <div class="card-body album-body" style="width: 350px; height:200px">
+                        <div class="card-body album-body" style="width: 250px; height:200px">
                             <h4 class="mt-4">《Vanilla Villa 香草度假村》</h4>
                         </div>
                     </div>
                     <div class="album-row swiper-slide d-flex">
                         <img src="./img/BN.jpg" alt="">
-                        <div class="card-body album-body" style="width: 350px; height:200px">
-                            <h4 class="mt-4">《Bossa Nova  &nbsp;芭莎諾娃》</h4>
+                        <div class="card-body album-body" style="width: 250px; height:200px">
+                            <h4 class="mt-4">《Bossa Nova 芭莎諾娃》</h4>
                         </div>
                     </div>
                 </div>
@@ -597,10 +595,12 @@
             <a class="mr-lg-4 animate__animated" href="#">Shop</a>
             <a class="mr-lg-4 animate__animated" href="#">Contact</a>
         </div>
+        <!-- 手機 -->
         <div class="d-lg-none">
             <button class="btn btn-lg btnToTop mr-3 smBtnToTop"><i class="fas fa-caret-up"></i></button>
             <button class="btn btn-lg btnToDown mr-3 smBtnToDown"><i class="fas fa-caret-down"></i></button>
         </div>
+        <!-- 桌機 -->
         <div class="d-none d-lg-block">
             <button class="btn btn-lg btnToTop mr-lg-5 lgBtnToTop"><i class="fas fa-caret-up"></i></button>
             <button class="btn btn-lg btnToDown mr-lg-5 lgBtnToDown"><i class="fas fa-caret-down"></i></button>
@@ -641,6 +641,15 @@
 
         $('.social a').mouseleave(function(){
             $(this).removeClass('animate__fadeIn')
+        });
+
+        $(window).resize(function(){
+            if($(window).width() < 970){
+                $('.navb').css('background-color','black');
+            }
+            else{
+                $('.navb').css('background-color','rgb(70, 116, 233)');
+            }
         });
 
         // herosection jq
@@ -809,12 +818,25 @@
             }
         });
         
-        $('footer .btnToTop').click(function () {
+        $('footer .smBtnToTop').click(function () {
             $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
         });
-        $('footer .btnToDown').click(function () {
-            $("html, body").animate({ scrollTop: 2976 }, "slow");
+        
+        $('footer .smBtnToDown').click(function () {
+            console.log('scrollTop:',$(window).scrollTop());
+            $("html, body").animate({ scrollTop: 3643 }, "slow");
+            return false;
+        });
+
+        $('footer .lgBtnToTop').click(function () {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
+
+        $('footer .lgBtnToDown').click(function () {
+            console.log('scrollTop:',$(window).scrollTop());
+            $("html, body").animate({ scrollTop: 2923 }, "slow");
             return false;
         });
     </script>
